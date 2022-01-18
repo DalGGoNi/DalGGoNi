@@ -1,0 +1,136 @@
+BODY{
+	FONT-SIZE: 12px; COLOR: #606060; LINE-HEIGHT: 18px; FONT-STYLE: normal; FONT-FAMILY: "µ¸¿ò";
+	scrollbar-face-color: #f0f1f2;
+	scrollbar-shadow-color: #ffffff;
+	scrollbar-highlight-color: #ffffff;
+	scrollbar-3dlight-color: #ffffff;
+	scrollbar-darkshadow-color: #ffffff;
+	scrollbar-track-color: #ffffff;
+	scrollbar-arrow-color: #ffffff;
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: 16px; FONT-FAMILY: "µ¸¿ò"
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: normal; FONT-FAMILY: "µ¸¿ò"; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: normal; FONT-FAMILY: "µ¸¿ò"; TEXT-DECORATION: none
+}
+A:active {
+	FONT-SIZE: 12px; COLOR: #ff0000; LINE-HEIGHT: normal; FONT-FAMILY: "µ¸¿ò"; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #ff0000; LINE-HEIGHT: normal; FONT-FAMILY: "µ¸¿ò"; TEXT-DECORATION: underline
+}
+TEXTAREA {
+	FONT-SIZE: 9pt; COLOR: #575757; FONT-FAMILY: Dotum,verdana
+}
+
+.resources_style {
+	PADDING-RIGHT: 7px; BACKGROUND-IMAGE: url(); TEXT-ALIGN: center
+}
+.resources_style A:link {
+	FONT-SIZE: 9px; COLOR: #A0A0A0; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.resources_style A:visited {
+	FONT-SIZE: 9px; COLOR: #A0A0A0; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.resources_style A:hover {
+	FONT-SIZE: 9px; COLOR: #000000; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.resources_style A:active {
+	FONT-SIZE: 9px; COLOR: #999999; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: underline
+}
+P {
+	MARGIN-TOP: 0px; FONT-SIZE: 9pt; MARGIN-BOTTOM: 0px
+}
+.input {
+	BORDER-RIGHT: #e8e8e8 1px solid; BORDER-TOP: #e8e8e8 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #e8e8e8 1px solid; COLOR: #575757; BORDER-BOTTOM: #e8e8e8 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #f8f8f8
+}
+.input01 {
+	BORDER-RIGHT: #e8e8e8 1px solid; BORDER-TOP: #e8e8e8 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #e8e8e8 1px solid; COLOR: #575757; BORDER-BOTTOM: #e8e8e8 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #f8f8f8
+}
+.input02 {
+	BORDER-RIGHT: #bababa 1px solid; BORDER-TOP: #bababa 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #bababa 1px solid; COLOR: #000000; BORDER-BOTTOM: #bababa 1px solid; HEIGHT: 19px; BACKGROUND-COLOR: #ffffff
+}
+.input03 {
+	BORDER-RIGHT: #d8d3d3 1px solid; BORDER-TOP: #d8d3d3 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #d8d3d3 1px solid; COLOR: #808080; BORDER-BOTTOM: #d8d3d3 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #ffffff
+}
+.input04 {
+	BORDER-RIGHT: #d8d3d3 0px solid; BORDER-TOP: #d8d3d3 0px solid; FONT-SIZE: 12px; BORDER-LEFT: #d8d3d3 0px solid; COLOR: #666666; BORDER-BOTTOM: #d8d3d3 0px solid; HEIGHT: 18px; BACKGROUND-COLOR: #ffffff
+}
+input, textarea {
+  line-height:18px;
+}
+.input1 {
+  background-color:#FFFFFF;color:#000000;border: 1px solid #b0b0b0;font-size:11px;height:20px;padding-left:2px;
+}
+.input2 {
+  background-color:#ff9900;color:#000000;border: 1px solid #ff6666;font-size:11px;height:20px;padding-left:2px;
+}
+.input3 {
+  background-color:#FFFF80;color:#000000;border: 1px solid #b0b0b0;font-size:11px;height:20px;padding-left:2px;
+}
+.table {
+	border-top-width: 5px;
+	border-top-style: solid;
+	border-top-color: 4162CD;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: C2C2C2;
+}
+.textarea1 {
+  background-color:#FFFFFF;color:#000000;border: 1px solid #bababa;font-size:9pt;
+}
+.style1 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.td1 {
+	background-color: #EDF4F8;
+	padding:2px;
+	font-size:12px;
+}
+.td2 {
+	background-color: #FFFFFF;
+	padding:2px;
+	font-size:12px;
+}
+.td3 {
+	background-color: #EFEFEF;
+	text-align: center;
+	font-size:12px;
+}
+.td4 {
+	background-color: #EFEFEF;
+	text-align: left;
+	font-size:12px;
+}
+.td5 {
+	background-color: #EDF4F8;
+	padding:2px;
+	text-align: center;
+	font-size:12px;
+}
+.td6 {
+	background-color: #FFE4B5;
+	padding:2px;
+	text-align: center;
+	font-size:12px;
+}
+.td7 {
+	background-color: #FFFAFA;
+	padding:2px;
+	text-align: center;
+	font-size:12px;
+}
+.small a:hover { font-family: "µ¸¿ò", "arial"; font-size: 9pt; color: 5DC011; text-decoration: underline}
+.small a:link { font-family: "µ¸¿ò", "arial"; font-size: 9pt; color: #ff0000; text-decoration: underline}
+
+.bar_vline {
+	background-attachment: fixed;
+	background-image: url('/images/bar_vline.gif');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
