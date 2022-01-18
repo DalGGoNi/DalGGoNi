@@ -1,0 +1,35 @@
+body, select, input, div, form, textarea, center, option, pre, td, tr, p {color:#330000; font-family: Verdana,Tahoma,Arial,±¼¸²,µ¸¿ò; font-size:9pt; }
+
+input, textarea {line-height:18px;}
+.input1    {background-color:#FFFFFF;color:#000000;border: 1px solid #b0b0b0;font-size:11px;height:20px;padding-left:2px;};
+.input2    {background-color:#ff9900;color:#000000;border: 1px solid #ff6666;font-size:11px;height:20px;padding-left:2px;};
+.input3    {background-color:#FFFF80;color:#000000;border: 1px solid #b0b0b0;font-size:11px;height:20px;padding-left:2px;};
+.textarea  {background-color:#FFFFFF;color:#000000;border: 1px solid #b0b0b0;font-size:9pt;}
+
+A:link, A:active, A:visited {color:#212121; font-size:12px; text-decoration: none;}
+A:hover {color:#c0c0c0; text-decoration:none; position:relative; top:1; left:1; }
+
+.table {
+	border-top-width: 5px;
+	border-top-style: solid;
+	border-top-color: 4162CD;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: C2C2C2;
+}
+
+.td1 {
+	background-color: #EFEFEF;
+	padding:5px;
+	font-size:12px;
+}
+.td2 {
+	background-color: #FFFFFF;
+	padding:5px;
+	font-size:12px;
+}
+.td1_center {
+	background-color: #EFEFEF; 
+	text-align: center;
+	font-size:12px;
+}

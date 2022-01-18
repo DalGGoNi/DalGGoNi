@@ -1,0 +1,6 @@
+.loginbox {
+	BORDER-RIGHT: #e8e8e8 1px solid; BORDER-TOP: #e8e8e8 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #e8e8e8 1px solid; COLOR: #575757; BORDER-BOTTOM: #e8e8e8 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #f8f8f8
+}
+.loginSaveIDTxt{
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: 16px; FONT-FAMILY: "돋움"
+}
