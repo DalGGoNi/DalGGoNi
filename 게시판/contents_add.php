@@ -58,10 +58,7 @@ else
     Fun::alert("정상적인 방법으로 접속하여 주세요.");
     exit;
 }
-//Fun::print_r($row);
-//$query_string = Fun::getParamUrl("uno");
-//Fun::print_r($_GET);
-//exit;
+
 
 ?><!DOCTYPE html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="ko"> <![endif]-->
@@ -73,91 +70,118 @@ else
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Style-Type" content="text/css">
+
 <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <script type="text/javascript" src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+
 <link rel="shortcut icon" href="android-icon.ico">
 
-        <?php if($post["mode"] == "write1"){
-		    echo "<title>게시물 추가</title>";
-		}else{
-		    echo "<title>게시물 수정</title>";
-		    
-		}?>
+<script src="summernote/summernote-lite.js"></script>
+<script src="summernote/lang/summernote-ko-KR.js"></script>
+<link rel="stylesheet" href="summernote/summernote-lite.css">
+
+<?php if($post["mode"] == "write1"){
+    echo "<title>게시물 추가</title>";
+}else{
+    echo "<title>게시물 수정</title>";
+    
+}?>
   
-        <script type="text/javascript">
-            function goList(){
-                location.href = "<?php echo $_list_uri; ?>";
-            }
-            function goDelete(uno){
-            if (confirm("정말 삭제 하시겠습니까?")==true){
-                	location.href = "<?php echo $_delete_content_uri?>&uno=" + uno;
-            	}else{
-            		return;
-            	}
-            }
-            function goFiledelete(uno){
-            	if (confirm("정말 삭제 하시겠습니까?")==true){
-                	location.href = "<?php echo $_delete_file_uri?>&uno=" + uno;
-            	}else{
-            		return;
-            	}
-            }
-            function goSubmit(){
-                var frm = document.forms["frmname01"];
-                
-               if(!frm.title.value){
-                    alert("제목을 입력하여 주세요.");
-                    frm.title.focus();
-                }else if(frm.title.value.replace(/^\s+|\s+$/g, '' ) == "" ){
-                    alert("제목에 공백만 입력되었습니다.");
-                    frm.content.focus();
-                }
-                else if(!frm.content.value){
-                    alert("내용을 입력하여 주세요.");
-                    frm.content.focus();
-                }else if(frm.content.value.replace(/^\s+|\s+$/g, '' ) == "" ){
-                    alert("내용에 공백만 입력되었습니다.");
-                    frm.content.focus();
-                }
-                else {
-                    frm.submit();
-                }
-            }
-            function GoUserIdCheck(obj){
-                document.getElementById("user_id_check").value = "";
-                document.getElementById("ajax_message").innerHTML = "";
-                //console.log(obj);
-                //alert(obj);
-                // Create an XMLHttpRequest object
-                var xhttp = new XMLHttpRequest();
+<script type="text/javascript">
+$(document).ready(function() { 
+var fontList = ['맑은 고딕','굴림','돋움','바탕','궁서','Arial','Courier New','Verdana','Tahoma','Times New Roamn'];
+ $('#summernote').summernote({ 
+ lang: 'ko-KR', 
+ height: 300, 
+ fontNames: fontList, 
+ fontNamesIgnoreCheck: fontList, 
+ fontSizes: ['8','9','10','11','12','14','18','24','36'],
+  toolbar: [ 
+  ['font', ['fontname','fontsize','fontsizeunit']], 
+  ['fontstyle', ['bold','italic','underline','strikethrough','forecolor','backcolor','superscript','subscript','clear']], 
+  ['style', ['style']], 
+  ['paragraph', ['paragraph','height','ul','ol']], 
+  ['insert', ['table','hr','link','picture','video']], 
+  ['codeview'], 
+  ],
+  }); 
+  // $('#summernote').summernote('fontName', '맑은 고딕'); 
+  // $('#summernote').summernote('fontSize', 11); 
+  // $('#summernote').summernote('fontSizeUnit', 'pt'); 
+}); 
+    function goList(){
+        location.href = "<?php echo $_list_uri; ?>";
+    }
+    function goDelete(uno){
+    if (confirm("정말 삭제 하시겠습니까?")==true){
+        	location.href = "<?php echo $_delete_content_uri?>&uno=" + uno;
+    	}else{
+    		return;
+    	}
+    }
+    function goFiledelete(uno){
+    	if (confirm("정말 삭제 하시겠습니까?")==true){
+        	location.href = "<?php echo $_delete_file_uri?>&uno=" + uno;
+    	}else{
+    		return;
+    	}
+    }
+    function goSubmit(){
+        var frm = document.forms["frmname01"];
+        
+       if(!frm.title.value){
+            alert("제목을 입력하여 주세요.");
+            frm.title.focus();
+        }else if(frm.title.value.replace(/^\s+|\s+$/g, '' ) == "" ){
+            alert("제목에 공백만 입력되었습니다.");
+            frm.content.focus();
+        }
+        else if(!frm.content.value){
+            alert("내용을 입력하여 주세요.");
+            frm.content.focus();
+        }else if(frm.content.value.replace(/^\s+|\s+$/g, '' ) == "" ){
+            alert("내용에 공백만 입력되었습니다.");
+            frm.content.focus();
+        }
+        else {
+            frm.submit();
+        }
+    }
+    function GoUserIdCheck(obj){
+        document.getElementById("user_id_check").value = "";
+        document.getElementById("ajax_message").innerHTML = "";
+        //console.log(obj);
+        //alert(obj);
+        // Create an XMLHttpRequest object
+        var xhttp = new XMLHttpRequest();
 
-                // Define a callback function
-                xhttp.onload = function() {
-                  // Here you can use the Data
-                    if(this.responseText != "")
-                    {
-                        document.getElementById("user_id_check").value = "false";
-                        document.getElementById("ajax_message").innerHTML =  this.responseText;
-                    }
-                    else 
-                    {
-                        document.getElementById("user_id_check").value = "true";
-                    }
-                }
+        // Define a callback function
+        xhttp.onload = function() {
+          // Here you can use the Data
+            if(this.responseText != "")
+            {
+                document.getElementById("user_id_check").value = "false";
+                document.getElementById("ajax_message").innerHTML =  this.responseText;
+            }
+            else 
+            {
+                document.getElementById("user_id_check").value = "true";
+            }
+        }
 
-                // Send a request
-                xhttp.open("GET", "action.php?mode=userid_check&user_id=" + document.getElementById("user_id").value );
-                xhttp.send();
-            }
-        </script>
-        <style>
-            textarea{
-                width:600px;
-                height:200px;
-            }
-        </style>
-    </head>
+        // Send a request
+        xhttp.open("GET", "action.php?mode=userid_check&user_id=" + document.getElementById("user_id").value );
+        xhttp.send();
+    }
+</script>
+<style>
+    textarea{
+        width:600px;
+        height:200px;
+    }
+</style>
+</head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -185,11 +209,11 @@ else
 <input type="hidden" id="user_id_check" name="user_id_check" value="" />
     <div align="center" class="container">
         <center>
-            <h3 style="text-align: left; width: 800px"><img src="/lib/images/title_De.gif">게시판 글 <?php echo ($post["mode"] == "modify" ? " - 수정" : " - 추가"); ?></h3>
+            <h3 style="text-align: left; width: 80%"><img src="/lib/images/title_De.gif">게시판 글 <?php echo ($post["mode"] == "modify" ? " - 수정" : " - 추가"); ?></h3>
             <br />
-        <table style="width:800px" class="table  table-hover">
+        <table style="table-layout: fixed; width: 80%;" class="table">
             <colgroup>
-                <col style="width:200px" />
+                <col style="width:80px" />
                 <col />
                 <col style="width:107px"/>
             </colgroup>
@@ -215,12 +239,12 @@ else
                 
                 <tr>
                     <th>제목</th>
-                    <td colspan="2"><input type="text" style="width:600px" maxlength="25" class="form-control" id="title" name="title" value="<?php echo $member["title"]??null; ?>" required /></td>
+                    <td colspan="2"><input type="text" maxlength="25" class="form-control" id="title" name="title" value="<?php echo $member["title"]??null; ?>" required /></td>
                 </tr>
                 <tr>
                 	<th>내용</th>
                 	<td colspan="2">
-                	<textarea name = "content" id="content" class="form-control" required ><?php echo $member["content"]??null; if(!isset($member)){echo null;} ?></textarea>
+                	<textarea id="summernote" name="content" class="form-control" required ><?php echo $member["content"]??null; if(!isset($member)){echo null;} ?></textarea>
                     <br />
                     </td>
                 </tr>

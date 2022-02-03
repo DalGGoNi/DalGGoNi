@@ -16,6 +16,8 @@ $_login_uri = "new_member.php?mode=write" . $_query_string;
 $_login_midify_uri="new_member.php?mode=modify".$_query_string;
 $_pre_uri = "action.php?mode=pre".$_query_string;
 $_odd_uri = "action.php?mode=odd".$_query_string;
+$_stu_pre_uri = "action.php?mode=stupre".$_query_string;
+$_stu_odd_uri = "action.php?mode=stuodd".$_query_string;
 $_insert_uri= "insert.php?" . $_query_string;
 $_action_uri = "action.php?mode=like" . $_query_string;
 $_query_string1 = Fun::getParamUrl("num,mode");

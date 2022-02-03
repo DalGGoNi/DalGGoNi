@@ -174,14 +174,14 @@ $member = $db->Record;
 						<td colspan="5"><a href="file_download.php?filepath=\<?php echo $member["image"];?>"><?php echo $member["image"];?></a>
 					</tr>
 					<tr class="article-body">
-						<td colspan="6" style="vertical-align: top;"><div class="line1-ellipsis"><?php echo $CONTET=$member["content"]; $CONTENT= Fun::html2char($CONTENT); htmlspecialchars($CONTENT??null); ?></div></td>
+						<td colspan="6" style="vertical-align: top;"><div class="line1-ellipsis"><?php  $CONTENT = $member["content"];$CONTENT= Fun::html2char($CONTENT); htmlspecialchars($CONTENT??null);echo $CONTENT; ?></div></td>
 					</tr>
 					<tr>
 						<td colspan="6" align="center"><?php if ($member["imgurl"] != "")
 						{
 						    if (preg_match("/\.(gif|jpg|jpeg|png|PNG)$/i", $member["imgurl"]))
 						    {
-						        echo "<img src=". str_replace(" ","_",$member['imgurl']). " width=800 class='image'>";
+						        echo "<img src=". str_replace(" ","_",$member['imgurl']). " style='max-width: 100%; height: auto;' class='image'>";
 						    }
 						    else
 						    {
@@ -273,7 +273,7 @@ $member = $db->Record;
 			
 			<h5>댓글 목록</h5>
 
-				<table class="table table-hover" style="table-layout: fixed; width: 910px">
+				<table class="table table-hover" style="table-layout: fixed; width: 100%;">
 				<script>
 				
     				function goDelete(num){
@@ -386,7 +386,7 @@ $member = $db->Record;
                                     <td style=\"text-align: center; width:10%;\">{$no}</td>
                                     <td style=\"text-align: left; width:15%;\">{$user_name}</td>
                                     <td style=\"text-align: left; width:47%;\"><div class='line1-ellipsis'>{$member["content"]}</div></td>
-                                    <td style=\"text-align: right; width:10%;\">{$member["reg_date"]}</td>
+                                    <td style=\"text-align: right; width:10%;\"><div class='line1-ellipsis'>{$member["reg_date"]}</div></td>
                                     <td style=\"text-align: right; width:9%\">{$modify}</td>
                                     <td style=\"text-align: right; width:9%\">{$delete}</td>                                   
                                 </tr>
@@ -408,15 +408,8 @@ $member = $db->Record;
 							<td colspan="6" style="text-align:center"><?php echo $str_page_bar ?></td>
 						</tr>
 						<tr>
-						<td  colspan="5" align="left">
-						<?php if($member["tag"] == 'study'){
-						    echo '<button class="btn btn-warning"  onclick="goListStudy();" title="목록" />목록';
-						} else{
-						    echo '<button class="btn btn-warning"  onclick="goList();" title="목록" />목록';
-						}?>
 
-    				</td>
-    				<td align="right">
+    				<td align="right" colspan="6">
     				<?php 
     				if (!isset($row['USER_ID'])){
     				    echo null;
@@ -437,20 +430,30 @@ $member = $db->Record;
                     ?>
                     </td>
                     </tr>
+                    <table style="table-layout: fixed; width: 100%;">
                     <tr>
-                    <td colspan="4">
-						<form action="<?php echo $_pre_uri;?>" method="post">
+                    <td>
+						<form action="<?php if($member['tag']==null){echo $_pre_uri;}else{echo $_stu_pre_uri;}?>" method="post">
 						<input type="hidden" id="uno" name="uno" value="<?php echo $uno;?>" />
 						<input type="submit" title="이전글" class="btn btn-warning" value = "이전글" />
 						</form>
 					</td>
-					<td colspan="2" align="right">
-						<form action="<?php echo $_odd_uri;?>" method="post">
+					<td align="center">
+						<?php if($member["tag"] == 'study'){
+						    echo '<button class="btn btn-warning"  onclick="goListStudy();" title="목록" />목록';
+						} else{
+						    echo '<button class="btn btn-warning"  onclick="goList();" title="목록" />목록';
+						}?>
+
+    				</td>
+					<td align="right">
+						<form action="<?php if($member['tag']==null){echo $_odd_uri;}else{echo $_stu_odd_uri;}?>" method="post">
 						<input type="hidden" id="uno" name="uno" value="<?php echo $uno;?>" />
 						<input type="submit" title="다음글" class="btn btn-warning" value = "다음글" />
 						</form>
 					</td>
                     </tr>
+                    </table>
 					</tfoot>
 				</table>
 		</div>

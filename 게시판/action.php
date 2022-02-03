@@ -246,7 +246,9 @@ else if($post["mode"] == "pre"){
                 WHERE UNO=(
                             SELECT MAX(UNO) 
                             FROM EX_CONTENTS
-                            WHERE UNO < '$UNO')";
+                            WHERE UNO < '$UNO'
+                            AND TAG IS NULL)
+                ";
         $db->query($sql);
         $db->next_record();
         $member = $db->Record;
@@ -269,7 +271,59 @@ else if($post["mode"] == "odd"){
                 WHERE UNO=(
                             SELECT MIN(UNO)
                             FROM EX_CONTENTS
-                            WHERE UNO > '$UNO')";
+                            WHERE UNO > '$UNO'
+                            AND TAG IS NULL)
+                ";
+        $db->query($sql);
+        $db->next_record();
+        $member = $db->Record;
+        if(!$member["uno"]){
+            echo Fun::alert("다음글이 존재하지 않습니다.");
+        }else{
+            echo "<script>location.href='contents.php?&uno={$member["uno"]}'</script>";
+        }
+    }catch(Exception $ex){
+        $db->rollback();
+        echo $ex;
+        exit;
+    }
+}
+else if($post["mode"] == "stupre"){
+    try{
+        $UNO = $post['uno'];
+        $sql = "SELECT *
+                FROM EX_CONTENTS
+                WHERE UNO=(
+                            SELECT MAX(UNO)
+                            FROM EX_CONTENTS
+                            WHERE UNO < '$UNO'
+                            AND TAG = 'study')
+                ";
+        $db->query($sql);
+        $db->next_record();
+        $member = $db->Record;
+        if(!$member["uno"]){
+            echo Fun::alert("이전글이 존재하지 않습니다.");
+        }else{
+            echo "<script>location.href='contents.php?&uno={$member["uno"]}'</script>";
+        }
+    }catch(Exception $ex){
+        $db->rollback();
+        echo $ex;
+        exit;
+    }
+}
+else if($post["mode"] == "stuodd"){
+    try{
+        $UNO = $post['uno'];
+        $sql = "SELECT *
+                FROM EX_CONTENTS
+                WHERE UNO=(
+                            SELECT MIN(UNO)
+                            FROM EX_CONTENTS
+                            WHERE UNO > '$UNO'
+                            AND TAG = 'study')
+                ";
         $db->query($sql);
         $db->next_record();
         $member = $db->Record;

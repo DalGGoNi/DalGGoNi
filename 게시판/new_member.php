@@ -215,9 +215,9 @@ if($post["mode"] == "write")
 <input type="hidden" id="user_name_check" name="user_name_check" value="" />
     <div align="center" class="container">
         <center>
-            <h3 style="text-align: left; width: 800px"><img src="/lib/images/title_De.gif">회원<?php echo ($post["mode"] == "modify" ? " - 수정" : " - 추가"); ?></h3>
+            <h3 style="text-align: left; width: 80%"><img src="/lib/images/title_De.gif">회원<?php echo ($post["mode"] == "modify" ? " - 수정" : " - 추가"); ?></h3>
             <br />
-        <table style="width:800px" class="table  table-hover">
+        <table style="table-layout: fixed; width: 80%;" class="table  table-hover">
             <colgroup>
                 <col style="width:200px" />
                 <col />

@@ -64,6 +64,7 @@ A as (
             AND C.UNO=D.UNO(+)
             AND C.UNO=E.UNO(+)
             AND TITLE IS NOT NULL
+            AND TAG IS NULL
             {$mWhere}
         ORDER BY HIT desc
 )
@@ -94,6 +95,7 @@ WHERE 1 = 1
     AND C.USER_NAME = A.USER_NAME(+)
     AND C.UNO=D.UNO(+)
     AND C.UNO=E.UNO(+)
+    AND TAG IS NULL
     AND TITLE IS NOT NULL
 {$mWhere}
 ORDER BY HIT desc
@@ -138,7 +140,7 @@ if($query_row_count > 0)
                 <td style=\"text-align: center;\">{$no}</td>
                 <td style=\"text-align: left;\">{$user_name}</td>
                 <td style=\"text-align: left;\"><h5><div class='line1-ellipsis'><a class='glanlink' href='action.php?mode=hit&uno={$member["uno"]}'>$image {$member["title"]} [{$member["uno_count"]}]</div></h5></td>
-                <td style=\"text-align: center;\">{$member["reg_date"]}</td>
+                <td style=\"text-align: center;\"><div class='line1-ellipsis'>{$member["reg_date"]}</div></td>
                 <td style=\"text-align: center;\">{$member["count"]}</td>
                 <td style=\"text-align: center;\">{$member["hit"]}</td>
             </tr>
@@ -212,10 +214,9 @@ if($query_row_count > 0)
         color:black;
     }
     .line1-ellipsis {
-        width: 580px;
         display: block;/* 블록태그로 만들어준다 */
         text-overflow:ellipsis;/* 말줄임 css */
-        white-space:pre;/*글자를 한줄로 모아준다*/
+        white-space:pre-wrap;/*글자를 한줄로 모아준다*/
         overflow:hidden; 
     }
 </style>
@@ -237,7 +238,7 @@ if($query_row_count > 0)
             <a class="dropdown-item" href="best_like.php" title="좋아요 순">Like</a>
           </div>
         </li>
-        <li class="nav-item">
+         <li class="nav-item">
           <a class="nav-link" href="study_list.php">Study</a>
         </li>
       </ul>

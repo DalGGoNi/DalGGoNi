@@ -140,7 +140,7 @@ ORDER BY CONT_NUM desc
                 <td style=\"text-align: center;\">{$no}</td>
                 <td style=\"text-align: left;\">{$user_name}</td>
                 <td style=\"text-align: left;\"><h5><div class='line1-ellipsis'><a class='glanlink' href='action.php?mode=hit&uno={$member["uno"]}'>$image {$member["title"]} [{$member["uno_count"]}]</div></h5></td>
-                <td style=\"text-align: center;\">{$member["reg_date"]}</td>
+                <td style=\"text-align: center;\"><div class='line1-ellipsis'>{$member["reg_date"]}</div></td>
                 <td style=\"text-align: center;\">{$member["count"]}</td>
                 <td style=\"text-align: center;\">{$member["hit"]}</td>
             </tr>
@@ -214,10 +214,9 @@ ORDER BY CONT_NUM desc
         color:black;
     }
     .line1-ellipsis {
-        width: 580px;
         display: block;/* 블록태그로 만들어준다 */
         text-overflow:ellipsis;/* 말줄임 css */
-        white-space:pre;/*글자를 한줄로 모아준다*/
+        white-space:pre-wrap;/*글자를 한줄로 모아준다*/
         overflow:hidden; 
     }
 </style>
