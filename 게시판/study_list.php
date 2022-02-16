@@ -239,7 +239,7 @@ if($query_row_count > 0)
           </div>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="study/study_list.php">Study</a>
+          <a class="nav-link" href="study_list.php">Study</a>
         </li>
       </ul>
     </div>
